@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <title>ng-controller Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-controller="MyController">
+    <h2>AngularJS ng-controller Example</h2>
+
+    <p>Enter your name: <input type="text" ng-model="name" /></p>
+    <p>Hello, {{ name }}!</p>
+
+    <script>
+      // Define AngularJS Module
+      var app = angular.module("myApp", []);
+
+      // Define Controller
+      app.controller("MyController", function ($scope) {
+        $scope.name = "Shrena"; // Initial data
+      });
+    </script>
+  </body>
+</html>

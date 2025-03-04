@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>AngularJS Filter Example</title>
+    <script src="../JS/angular.min.js"></script>
+  </head>
+  <body ng-controller="myController">
+    <h2>Product List</h2>
+    <!-- Search Box to filter products -->
+    <input
+      type="text"
+      ng-model="searchText"
+      placeholder="Search for a product..."
+    />
+
+    <ul>
+      <!-- Filtering the product list based on searchText -->
+      <li ng-repeat="product in products | filter:searchText">
+        {{ product.name }} - {{ product.category }} - ₹{{ product.price }}
+      </li>
+    </ul>
+
+    <script>
+      // Step 2: Define AngularJS App
+      var app = angular.module("myApp", []);
+
+      // Step 3: Define Controller
+      app.controller("myController", function ($scope) {
+        // List of products
+        $scope.products = [
+          { name: "Laptop", category: "Electronics", price: 50000 },
+          { name: "Mobile", category: "Electronics", price: 20000 },
+          { name: "Shirt", category: "Clothing", price: 1500 },
+          { name: "Shoes", category: "Footwear", price: 3000 },
+          { name: "Table", category: "Furniture", price: 7000 },
+        ];
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="created_module">
+  <head>
+    <title>AngularJS module</title>
+    <script src="js/angular.min.js"></script>
+  </head>
+  <body>
+    <script>
+      var mymodule = angular.module("created_module", []);
+      mymodule.controller("mycontroller", function ($scope) {
+        alert("Hello world"); // alert will give a popup box in browser you can also use console.log("") but it will show the message in console
+        $scope.name = "Enter your name"; //storing value using scope
+      });
+    </script>
+    <div ng-controller="mycontroller">
+      <input type="text" ng-model="name" name="" />
+      <input type="text" ng-model="city" city="" />
+      <br />
+      {{name}} {{city}}
+    </div>
+  </body>
+</html>

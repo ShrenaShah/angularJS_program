@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="mymodule">
+  <head>
+    <title>Nested Controller</title>
+    <script src="../JS/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="parent_controller">
+      Parent Name : <input type="text" ng-model="parent_name" />
+      <br />
+      {{parent_name}}
+
+      <div ng-controller="child_controller">
+        Child Name : <input type="text" ng-model="child_name" />
+        <p>my name is {{child_name}} and my father's name is {{parent_name}}</p>
+      </div>
+    </div>
+
+    <script>
+      var variable = angular.module("mymodule", []);
+
+      variable.controller("parent_controller", function ($scope) {
+        $scope.parent_name = "Father's name";
+      });
+
+      variable.controller("child_controller", function ($scope) {
+        $scope.child_name = "your name";
+      });
+    </script>
+  </body>
+</html>

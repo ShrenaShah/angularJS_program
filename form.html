@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AngularJS Form Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-controller="FormController">
+    <form name="myForm">
+      Name: <input type="text" ng-model="user.name" name="name" required />
+      <p>Entered Name: {{ user.name }}</p>
+    </form>
+
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("FormController", function ($scope) {
+        $scope.user = {};
+      });
+    </script>
+  </body>
+</html>

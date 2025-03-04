@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="created_module">
+  <head>
+    <title>Controller</title>
+    <script src="../JS/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="mycontroller">
+      First Name: <input type="text" ng-model="firstname" /><br />
+      Last Name: <input type="text" ng-model="lastname" /><br />
+      Full Name: {{fullname()}}
+      <!--method calling for application-->
+    </div>
+
+    <script>
+      var mymodule = angular.module("created_module", []);
+      mymodule.controller("mycontroller", function ($scope) {
+        $scope.firstname = "shrena";
+        $scope.lastname = "shah";
+        $scope.fullname = function () {
+          //method inside the controller
+          return $scope.firstname + " " + $scope.lastname;
+        };
+      });
+    </script>
+  </body>
+</html>

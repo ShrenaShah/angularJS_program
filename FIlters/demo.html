@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <title>Filter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body>
+    <p>{{'Hello World' | uppercase}}</p>
+    <!--uppercasing the string-->
+    <p>{{'Heyy' | lowercase}}</p>
+    <!--lowercasing the string-->
+    <p>{{'2638728' | currency:'₹'}}</p>
+    <!-- for getting value in currency format the parameter gives you perticular currency-->
+    <p>{{'2005-07-23' | date: 'fullDate'}}</p>
+    <!--for getting the date in month name format this line will still work even if you don't give parameter 'fullDate' this parameter is for getting day name-->
+    <ul>
+      <div ng-init="numbers=[2,32,5,3,6]"></div>
+      <li ng-repeat="num in numbers | orderBy:'-'">{{num}}</li>
+      <!--sorting array in decending order-->
+      <br />
+      <li ng-repeat="num in numbers | orderBy:' '">{{num}}</li>
+      <!--sorting array in accending order-->
+    </ul>
+  </body>
+</html>

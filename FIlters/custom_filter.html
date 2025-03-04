@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="mymodule">
+  <head>
+    <title>Custom Filter</title>
+    <script src="../JS/angular.min.js"></script>
+  </head>
+  <body>
+    <script>
+      var moduleVariable = angular.module("mymodule", []);
+
+      moduleVariable.filter("percentage", function () {
+        return function (input) {
+          if (!input) return "";
+          return (input * 100) / 600;
+        };
+      });
+    </script>
+
+    <input type="text" ng-model="marks" />
+    <br />
+    your percentage is {{marks | percentage}}%
+  </body>
+</html>
